@@ -10,16 +10,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($users as $user)
             <tr>
-                <th scope="row">1</th>
-                <td>Ikbal</td>
-                <td>ikbal@gmail</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
                 <td>
-                    <a href="" class="badge bg-primary">Detail</a>
+                    <a href="{{ route("user.show", $user->id) }}" class="badge bg-primary">Detail</a>
                     <a href="" class="badge bg-warning">Edit</a>
                     <a href="" class="badge bg-danger">Delete</a>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
