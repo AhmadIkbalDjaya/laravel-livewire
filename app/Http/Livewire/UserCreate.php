@@ -27,10 +27,11 @@ class UserCreate extends Component
         ]);
         $validated["password"] = Hash::make($validated["password"]);
         User::create($validated);
+        
         $this->name = null;
         $this->email = null;
         $this->password = null;
-        session()->flash("success", "User Berhasil Ditambahkan");
 
+        session()->flash("success", "User Berhasil Ditambahkan");
     }
 }

@@ -13,4 +13,11 @@ class UserController extends Controller
             "user" => $user,
         ]);
     }
+
+    public function edit(User $user)
+    {
+        return view("users.edit", [
+            "user" => $user,
+        ]);
+    }
 }
