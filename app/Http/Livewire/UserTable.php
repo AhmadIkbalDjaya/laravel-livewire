@@ -13,4 +13,10 @@ class UserTable extends Component
             "users" => User::orderBy("id", "desc")->get(),
         ]);
     }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+        session()->flash('success', 'user Behasil Dihapus');
+    }
 }

@@ -1,5 +1,6 @@
 <div>
     {{-- Stop trying to control. --}}
+    @include('partials.alert-success')
     <table class="table">
         <thead>
             <tr>
@@ -18,7 +19,7 @@
                 <td>
                     <a href="{{ route("user.show", $user->id) }}" class="badge bg-primary">Detail</a>
                     <a href="{{ route("user.edit", $user->id) }}" class="badge bg-warning">Edit</a>
-                    <a href="" class="badge bg-danger">Delete</a>
+                    <button wire:click="delete({{ $user->id }})" class="btn badge bg-danger">Delete</button>
                 </td>
             </tr>
             @endforeach
