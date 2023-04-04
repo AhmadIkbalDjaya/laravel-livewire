@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class UserTable extends Component
 {
+    protected $listeners = ["userStore" => "render"];
     public function render()
     {
         return view('livewire.user-table', [
