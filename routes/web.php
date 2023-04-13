@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Http\Livewire\Article;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('/users', function () {
 
 Route::get('/users/{user}', [UserController::class, 'show'])->name('user.show');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+
+Route::get('article/{nama}', Article::class)->name('article');
