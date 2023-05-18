@@ -3,6 +3,7 @@
 use App\Http\Livewire\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,6 @@ Route::get('/', function () {
 Route::get('/products', function () {
     return view('products');
 });
+
+Route::get('/article', [ArticleController::class, 'index'])->name('article');
 
